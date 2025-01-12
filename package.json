@@ -1,0 +1,15 @@
+{
+  "name": "@b41ex/foo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@netcracker/qubership-apihub-npm-gitflow": "1.0.13"
+  },
+  "scripts": {
+    "feature-start": "feature-start --featureName",
+    "feature-finish": "feature-finish",
+    "release-start": "release-start",
+    "release-finish": "release-finish"
+  }
+}
