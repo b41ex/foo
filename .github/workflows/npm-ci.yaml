@@ -102,13 +102,17 @@ jobs:
       
       - name: Delete associated NPM dist tag
         run: |
+          echo "Package name: $PACKAGE_NAME"
           DELETED_BRANCH=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
+          echo "Deleted branch: $DELETED_BRANCH"
           if [ "$DELETED_BRANCH" == "release" ]; then
             TAG_NAME="next"
           elif [ "$DELETED_BRANCH" == feature/* ]; then
             TAG_NAME="${CURRENT_BRANCH//\//-}"          
-          fi          
+          fi
+          echo "Tag name: $TAG_NAME"
           if [ -n "$TAG_NAME" ]; then
+            echo "Deleting tag"
             npm dist-tag rm "$PACKAGE_NAME" "$TAG_NAME"
           fi
         env:
