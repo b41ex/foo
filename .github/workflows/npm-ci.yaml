@@ -82,6 +82,11 @@ jobs:
     if: github.event_name == 'delete'
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com/'
       - name: Delete associated tag
         run: |
           DELETED_BRANCH=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
