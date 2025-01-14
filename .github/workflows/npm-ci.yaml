@@ -1,4 +1,5 @@
 name: NPM CI/CD Workflow
+run-name: ${{ github.event_name == 'delete' && "cleanup NPM dist tags" }}
 
 on:
   push:
