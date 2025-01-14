@@ -65,7 +65,7 @@ jobs:
           elif [ "$CURRENT_BRANCH" == "develop" ]; then
             TAG_NAME="dev"
           elif [[ "$CURRENT_BRANCH" == feature/* ]]; then
-            TAG_NAME="${CURRENT_BRANCH#feature/}"
+            TAG_NAME="${CURRENT_BRANCH//\//-}
           fi
           if [ -n "$TAG_NAME" ]; then
             npm publish --tag "$TAG_NAME"
