@@ -13,7 +13,7 @@ on:
       - feature/*
 
 permissions:
-  contents: read
+  contents: write
   packages: write
 
 jobs:
@@ -30,16 +30,12 @@ jobs:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com/'
 
-      - name: Authenticate to GitHub NPM Registry
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Bump version and commit (prerelease only)
         id: bump_version
         if: startsWith(github.ref, 'refs/heads/develop') || startsWith(github.ref, 'refs/heads/release') || startsWith(github.ref, 'refs/heads/feature/')
         run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"          
           CURRENT_BRANCH=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
           if [[ "$CURRENT_BRANCH" == "develop" || "$CURRENT_BRANCH" == "release" || "$CURRENT_BRANCH" == feature/* ]]; then
             npm version prerelease -m "chore: bump prerelease version to %s [ci skip]"
@@ -47,6 +43,9 @@ jobs:
           else
             echo "bump_version=false" >> $GITHUB_ENV
           fi
+      
+      - name: Install dependencies
+        run: npm install
 
       - name: Build the package
         run: npm run build --if-present
@@ -69,25 +68,18 @@ jobs:
           if [ -n "$TAG_NAME" ]; then
             npm publish --tag "$TAG_NAME"
           fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push changes back
         if: env.bump_version == 'true'
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
           git push origin HEAD
-
-      - name: Cleanup
-        if: always()
-        run: rm ~/.npmrc
 
   on-delete:
     if: github.event_name == 'delete'
     runs-on: ubuntu-latest
     steps:
-      - name: Authenticate to GitHub NPM Registry
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-
       - name: Delete associated tag
         run: |
           DELETED_BRANCH=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
@@ -97,7 +89,5 @@ jobs:
               npm dist-tag rm "$TAG_NAME" "$DELETED_BRANCH"
             fi
           fi
-
-      - name: Cleanup
-        if: always()
-        run: rm ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
