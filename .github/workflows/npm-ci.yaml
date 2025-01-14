@@ -103,7 +103,7 @@ jobs:
       - name: Delete associated NPM dist tag
         run: |
           echo "Package name: $PACKAGE_NAME"
-          DELETED_BRANCH=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
+          DELETED_BRANCH=${{ github.event.ref }}
           echo "Deleted branch: $DELETED_BRANCH"
           if [ "$DELETED_BRANCH" == "release" ]; then
             TAG_NAME="next"
