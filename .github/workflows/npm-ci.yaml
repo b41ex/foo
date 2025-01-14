@@ -57,8 +57,7 @@ jobs:
 
       - name: Publish to GitHub NPM Registry
         run: |
-          CURRENT_BRANCH=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
-          echo "Current branch: ${{ github.event.ref }}"
+          CURRENT_BRANCH=$(echo $GITHUB_REF | sed 's/refs\/heads\///')          
           if [ "$CURRENT_BRANCH" == "main" ]; then
             TAG_NAME="latest"
           elif [ "$CURRENT_BRANCH" == "release" ]; then
