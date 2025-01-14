@@ -1,6 +1,6 @@
 {
   "name": "@b41ex/foo",
-  "version": "1.1.2-dev.3",
+  "version": "1.1.2-next.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
