@@ -17,9 +17,7 @@
     "release-start": "release-start",
     "release-finish": "release-finish",
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "node test/test.js",
-    "pretest": "npm run build"
+    "dev": "rollup -c -w"
   },
   "files": [
     "dist"
