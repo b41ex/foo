@@ -1,15 +1,27 @@
 {
   "name": "@b41ex/foo",
   "version": "1.1.7-dev.2",
-  "main": "index.js",
+  "main": "dist/foo.cjs.js",
+  "module": "dist/foo.esm.js",
+  "browser": "dist/foo.umd.js",
   "license": "MIT",
   "devDependencies": {
-    "@b41ex/qubership-apihub-npm-gitflow": "dev"
+    "@b41ex/qubership-apihub-npm-gitflow": "dev",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0"
   },
   "scripts": {
     "feature-start": "feature-start --featureName",
     "feature-finish": "feature-finish",
     "release-start": "release-start",
-    "release-finish": "release-finish"
-  }
+    "release-finish": "release-finish",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
 }
