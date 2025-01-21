@@ -1,0 +1,15 @@
+{
+  "name": "@b41ex/foo",
+  "version": "1.1.7",
+  "main": "dist/foo.cjs.js",
+  "module": "dist/foo.esm.js",
+  "browser": "dist/foo.umd.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "files": [
+    "dist"
+  ]
+}

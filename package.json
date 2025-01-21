@@ -1,15 +1,21 @@
 {
-  "name": "@b41ex/foo",
-  "version": "1.1.6",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "@b41ex/qubership-apihub-npm-gitflow": "dev"
+    "@netcracker/qubership-apihub-npm-gitflow": "dev",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0",
+    "lerna": "8.1.9"
   },
   "scripts": {
     "feature-start": "feature-start --featureName",
     "feature-finish": "feature-finish",
     "release-start": "release-start",
-    "release-finish": "release-finish"
+    "release-finish": "release-finish",
+    "build": "npm run --workspace=@b41ex/foo build && npm run --workspace=@b41ex/qux build"    
   }
 }
