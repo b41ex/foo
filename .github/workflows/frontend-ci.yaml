@@ -12,6 +12,10 @@ on:
       - release
       - feature/*
 
+permissions:
+  contents: write
+  packages: write      
+
 jobs:
   call-frontend-ci-workflow:
     uses: netcracker/qubership-apihub-ci/.github/workflows/frontend-ci.yaml@lerna-support
