@@ -1,6 +1,6 @@
 {
   "name": "@b41ex/qux",
-  "version": "1.1.7-dev.8",
+  "version": "1.1.7-dev.9",
   "main": "dist/qux.cjs.js",
   "module": "dist/qux.esm.js",
   "browser": "dist/qux.umd.js",
