@@ -1,6 +1,6 @@
 {
   "name": "@b41ex/foo",
-  "version": "1.1.8-dev.6",
+  "version": "1.1.8-next.1",
   "main": "dist/foo.cjs.js",
   "module": "dist/foo.esm.js",
   "browser": "dist/foo.umd.js",
