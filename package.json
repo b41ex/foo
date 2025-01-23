@@ -11,7 +11,7 @@
     "rollup": "^1.29.0",
     "lerna": "8.1.9"
   },
-  "scripts": { 
+  "scripts": {
     "feature-start": "feature-start --featureName",
     "feature-finish": "feature-finish",
     "release-start": "release-start",
