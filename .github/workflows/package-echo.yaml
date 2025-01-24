@@ -1,7 +1,6 @@
 name: Publish Echo
 
-on:
-  registry_package:
+on: registry_package
 
 jobs:
   echo-package-info:
