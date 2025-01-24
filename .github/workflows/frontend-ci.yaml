@@ -18,4 +18,10 @@ permissions:
 
 jobs:
   call-frontend-ci-workflow:
-    uses: netcracker/qubership-apihub-ci/.github/workflows/frontend-ci.yaml@lerna-support
+    uses: netcracker/qubership-apihub-ci/.github/workflows/frontend-ci.yaml@main
+
+  echo-outputs:
+    runs-on: ubuntu-latest
+    needs: call-frontend-ci-workflow
+    steps:
+      - run: echo ${{ needs.call-frontend-ci-workflow.outputs.package_version }} ${{ needs.call-frontend-ci-workflow.outputs.npm_dist_tag }}

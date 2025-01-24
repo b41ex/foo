@@ -1,0 +1,28 @@
+name: Publish Echo
+
+on:
+  registry_package:
+    types: [published]
+
+jobs:
+  echo-package-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+        
+      - name: Dump event context
+        env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: echo "$EVENT_CONTEXT"
+        
+      - name: Echo package details
+        run: |
+          echo "Package Name: ${{ github.event.registry_package.name }}"
+          echo "Package Type: ${{ github.event.registry_package.package_type }}"
+          echo "Package Version: ${{ github.event.registry_package.package_version.version }}"
+          echo "Package HTML URL: ${{ github.event.registry_package.html_url }}"
+  
+    
