@@ -9,7 +9,7 @@
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rollup": "^1.29.0",
-    "lerna": "8.1.9"
+    "lerna": "8.1.9" 
   },
   "scripts": {
     "feature-start": "feature-start --featureName",
