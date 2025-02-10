@@ -6,12 +6,11 @@ on:
       - release
       - develop
       - feature/*
+      - bugfix/*
+      - hotfix/*
     tags:
       - '**'
   delete:
-    branches:
-      - release
-      - feature/*
 
 permissions:
   contents: write
