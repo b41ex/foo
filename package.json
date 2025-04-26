@@ -5,13 +5,13 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@netcracker/qubership-apihub-npm-gitflow": "feature-message-required-for-squash",
+    "@netcracker/qubership-apihub-npm-gitflow": "dev",
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rollup": "^1.29.0",
     "lerna": "8.2.1"
   },
-  "scripts": {    
+  "scripts": {
     "update-lock-file": "update-lock-file @netcracker",
     "build": "npm run --workspace=@b41ex/foo build && npm run --workspace=@b41ex/qux build"
   }
