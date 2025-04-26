@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - release
+      - hotfix
       - develop
       - feature/*
-      - bugfix/*
-      - hotfix/*
+      - bugfix/*      
     tags:
       - '**'
   delete:
