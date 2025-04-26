@@ -1,3 +1,3 @@
-export default function qux(){	
-	return 'qux';
+export default function qux4(){	
+	return 'qux4';
 }
