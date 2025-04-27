@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - release
+      - hotfix
       - develop
       - feature/*
-      - bugfix/*
-      - hotfix/*
+      - bugfix/*      
     tags:
       - '**'
   delete:
@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   call-frontend-ci-workflow:
-    uses: netcracker/qubership-apihub-ci/.github/workflows/frontend-ci.yaml@test/npm-update
+    uses: netcracker/qubership-apihub-ci/.github/workflows/frontend-ci.yaml@feature/use-npm-update-lock-file-script
 
   echo-outputs:
     runs-on: ubuntu-latest

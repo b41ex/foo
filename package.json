@@ -5,17 +5,14 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@netcracker/qubership-apihub-npm-gitflow": "2.2.2",
+    "@netcracker/qubership-apihub-npm-gitflow": "3.0.1",
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rollup": "^1.29.0",
-    "lerna": "8.1.9" 
+    "lerna": "8.2.1"
   },
   "scripts": {
-    "feature-start": "feature-start --featureName",
-    "feature-finish": "feature-finish",
-    "release-start": "release-start",
-    "release-finish": "release-finish",
+    "update-lock-file": "update-lock-file @netcracker",
     "build": "npm run --workspace=@b41ex/foo build && npm run --workspace=@b41ex/qux build"
   }
 }
