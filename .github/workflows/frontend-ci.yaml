@@ -1,4 +1,4 @@
-name: Frontend CI Workflow
+name: build & unit test
 
 on:
   push:
@@ -9,8 +9,7 @@ on:
       - feature/*
       - bugfix/*      
     tags:
-      - '**'
-  delete:
+      - '**'  
 
 permissions:
   contents: write
