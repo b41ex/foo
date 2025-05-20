@@ -6,6 +6,7 @@
   ],
   "devDependencies": {
     "@netcracker/qubership-apihub-npm-gitflow": "feature-skip-version-validation-for-some-packages",
+    "@mui/lab": "5.0.0-alpha.120",
     "@mui/material": "5.11.10",
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
