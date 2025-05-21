@@ -8,4 +8,4 @@ permissions:
 
 jobs:
   delete-dist-tag:
-    uses: netcracker/qubership-apihub-ci/.github/workflows/delete-dist-tag.yaml@bugfix/npm-dist-tag-not-deleted
+    uses: netcracker/qubership-apihub-ci/.github/workflows/delete-dist-tag.yaml@main

@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   call-frontend-ci-workflow:
-    uses: netcracker/qubership-apihub-ci/.github/workflows/frontend-ci.yaml@bugfix/npm-dist-tag-not-deleted
+    uses: netcracker/qubership-apihub-ci/.github/workflows/frontend-ci.yaml@main
 
   echo-outputs:
     runs-on: ubuntu-latest
