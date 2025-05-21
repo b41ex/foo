@@ -1,0 +1,11 @@
+name: delete-dist-tag
+
+on:
+  delete:
+
+permissions:
+  packages: write      
+
+jobs:
+  delete-dist-tag:
+    uses: netcracker/qubership-apihub-ci/.github/workflows/delete-dist-tag.yaml@main

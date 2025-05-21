@@ -5,12 +5,14 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@netcracker/qubership-apihub-npm-gitflow": "feature-skip-version-validation-for-some-packages",
+    "@netcracker/qubership-apihub-npm-gitflow": "3.1.0",
     "@mui/lab": "5.0.0-alpha.120",
     "@mui/material": "5.11.10",
-    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-commonjs": "^11.0.1", 
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "react": "18.2.0",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "react": "18.2.0",    
     "react-dom": "18.2.0",
     "rollup": "^1.29.0",
     "lerna": "8.2.1"
